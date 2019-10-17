@@ -1,0 +1,15 @@
+$primary-col: #cd00cd;
+$secondary-col: #cdcd00;
+
+$primary-font: #ffffff;
+$secondary-font: #000000;
+
+@mixin primary {
+  background-color: $primary-col;
+  color: $primary-font;
+}
+
+@mixin secondary {
+  background-color: $secondary-col;
+  color: $secondary-font;
+}

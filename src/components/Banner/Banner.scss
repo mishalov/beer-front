@@ -1,0 +1,9 @@
+@import "../../styles/Variables";
+
+.banner {
+  display: flex;
+  align-items: center;
+  .hero {
+    flex-grow: 1;
+  }
+}
