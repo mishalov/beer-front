@@ -2,4 +2,25 @@
   &__attribute {
     margin-right: 12px;
   }
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+    &-title {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  &__description {
+    overflow: hidden;
+    text-align: justify;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    // white-space: nowrap;
+  }
 }

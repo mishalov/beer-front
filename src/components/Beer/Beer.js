@@ -1,33 +1,54 @@
 import React from "react"
 import "./Beer.scss"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
 
-const Beer = props => (
-  <div className="beer-item">
-    <div className="card">
-      <div className="card-image">
-        <img
-          className="img-responsive"
-          src="https://picturepan2.github.io/spectre/img/macos-sierra-2.jpg"
-          alt="macOS Sierra"
-        />
-      </div>
-      <div className="card-header">
-        <button className="btn btn-primary float-right">
-          <i className="icon icon-plus"></i>
-        </button>
-        <div className="card-title h5">Атомная прачечная</div>
-        <div className="card-subtitle">
-          IBU: <span className="text-gray beer-item__attribute">20</span>
-          OG: <span className="text-gray beer-item__attribute">16.5</span>
-          ABV: <span className="text-gray beer-item__attribute">7.2</span>
+const Beer = props => {
+  const { ABV, IBU, OG, description, id, name, photo, style } = props
+  return (
+    <div className="beer-item">
+      <div className="card">
+        <div className="card-image">
+          <img
+            className="img-responsive"
+            src={photo.fixed}
+            alt="macOS Sierra"
+            width="100%"
+          />
+        </div>
+        <div className="card-header">
+          <div className="beer-item__header">
+            <div className="card-title h5 beer-item__header-title">
+              <Link to={`/${id}`}> {name}</Link>
+            </div>
+          </div>
+
+          <div className="card-subtitle">
+            IBU:<span className="text-primary beer-item__attribute">{IBU}</span>
+            OG: <span className="text-primary beer-item__attribute">{OG}</span>
+            ABV:
+            <span className="text-primary beer-item__attribute">
+              {ABV.toFixed(1)}°
+            </span>
+          </div>
+        </div>
+        <div className="card-body">
+          <div className="beer-item__description">{description}</div>
         </div>
       </div>
-      <div className="card-body">
-        An immersive, three-day experience focused on exploring the next
-        generation of technology, mobile and beyond.
-      </div>
     </div>
-  </div>
-)
+  )
+}
+
+Beer.propTypes = {
+  ABV: PropTypes.number,
+  IBU: PropTypes.number,
+  OG: PropTypes.number,
+  description: PropTypes.string,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  photo: PropTypes.object,
+  style: PropTypes.string,
+}
 
 export default Beer
