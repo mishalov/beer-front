@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Beer = props => {
-  const { ABV, IBU, OG, description, id, name, photo, style } = props
+  const { ABV, IBU, OG, description, id, name, photo } = props
   return (
     <div className="beer-item">
       <div className="card">
@@ -48,7 +48,6 @@ Beer.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   photo: PropTypes.object,
-  style: PropTypes.string,
 }
 
 export default Beer

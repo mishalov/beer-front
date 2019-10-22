@@ -1,9 +1,7 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import "./Banner.scss"
 
-const Banner = props => (
+const Banner = () => (
   <div className="hero hero-lg bg-secondary">
     <div className="hero-body">
       <h1>Крафтовая пивоварня «Gatsby»</h1>

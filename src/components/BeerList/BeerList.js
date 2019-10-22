@@ -1,4 +1,3 @@
-import { graphql } from "gatsby"
 import React from "react"
 import Beer from "../Beer"
 import "./BeerList.scss"
@@ -8,7 +7,7 @@ class BeerList extends React.Component {
   render() {
     const { beers } = this.props
     return (
-      <div class="p-2">
+      <div className="p-2">
         <div className="beer-list">
           <div className="container">
             <div className="columns">

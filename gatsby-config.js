@@ -1,4 +1,9 @@
 const globImporter = require("node-sass-glob-importer")
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+console.log(process.env.FRONT_URL)
 
 module.exports = {
   siteMetadata: {
@@ -38,7 +43,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: `http://localhost:1337`,
+        apiURL: process.env.API_URL,
         contentTypes: [
           // Список типов контента, которые планируется запрашивать из Gatsby.
           `beers`,

@@ -6,11 +6,24 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header className="navbar header">
     <section className="navbar-section">
-      <a href="..." className="navbar-brand mr-2">
+      <Link to="/" className="navbar-brand mr-2">
         Пример приложения на Gatsby + strapi.js
+      </Link>
+      <a
+        href="https://github.com/mishalov/beer-front"
+        className="btn btn-link"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        GitHub (front-end)
       </a>
-      <a href="..." className="btn btn-link">
-        GitHub
+      <a
+        href="https://github.com/mishalov/beer-back"
+        className="btn btn-link"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        GitHub (back-end)
       </a>
     </section>
   </header>
