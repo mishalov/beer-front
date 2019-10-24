@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Beer = props => {
-  const { ABV, IBU, OG, description, id, name, photo } = props
+  const { ABV, IBU, OG, description, id, name, photo, style } = props
   return (
     <div className="beer-item">
       <div className="card">
@@ -33,6 +33,7 @@ const Beer = props => {
           </div>
         </div>
         <div className="card-body">
+          <div className="beer-item__style">{`Стиль: ${style}`} </div>
           <div className="beer-item__description">{description}</div>
         </div>
       </div>
@@ -41,6 +42,7 @@ const Beer = props => {
 }
 
 Beer.propTypes = {
+  style: PropTypes.string,
   ABV: PropTypes.number,
   IBU: PropTypes.number,
   OG: PropTypes.number,
