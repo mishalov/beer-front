@@ -15,7 +15,6 @@ const IndexPage = props => {
       <SEO title="Home" />
       <Banner></Banner>
       <BeerList beers={beers}></BeerList>
-      <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   )
 }
