@@ -5,9 +5,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: ``,
-    description: ``,
-    author: `@gatsbyjs`,
+    title: `Крафтовая пивоварня Gatsby`,
+    description: `Варим лучший крафт в Тюмени!`,
+    author: `Mishalov Evgenii`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -41,6 +41,11 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
+        //queryLimit: 1000
+        // loginData: {
+        //   identifier: "",
+        //   password: "",
+        // },
         apiURL: process.env.API_URL,
         contentTypes: [
           // Список типов контента, которые планируется запрашивать из Gatsby.

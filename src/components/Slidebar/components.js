@@ -1,9 +1,4 @@
 import * as React from "react"
-import {
-  SliderItem,
-  GetHandleProps,
-  GetTrackProps,
-} from "react-compound-slider"
 
 export const Handle = ({
   domain: [min, max],
