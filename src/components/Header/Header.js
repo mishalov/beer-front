@@ -14,7 +14,7 @@ const Header = ({ siteTitle }) => (
         GitHub (front-end)
       </a>
       <a
-        href="https://github.com/mishalov/beer-back"
+        href="https://github.com/mishalov/beers-back"
         className="btn btn-link"
         rel="noopener noreferrer"
         target="_blank"
