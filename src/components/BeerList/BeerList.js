@@ -29,15 +29,24 @@ class BeerList extends React.Component {
       max: findMax(beers, "IBU").IBU,
     }
     const abvFilter = {
-      min: findMin(beers, "ABV").ABV,
-      max: findMax(beers, "ABV").ABV,
+      min: Math.floor(findMin(beers, "ABV").ABV),
+      max: Math.ceil(findMax(beers, "ABV").ABV),
     }
 
     this.state = { styleFilter: "", ibuFilter, abvFilter }
   }
 
   handleFilterByStyle = style => {
-    this.setState({ styleFilter: style })
+    const { beers } = this.props
+    const ibuFilter = {
+      min: findMin(beers, "IBU").IBU,
+      max: findMax(beers, "IBU").IBU,
+    }
+    const abvFilter = {
+      min: Math.floor(findMin(beers, "ABV").ABV),
+      max: Math.ceil(findMax(beers, "ABV").ABV),
+    }
+    this.setState({ styleFilter: style, ibuFilter, abvFilter })
   }
 
   handleChangeIbuFilter = values => {
@@ -61,15 +70,16 @@ class BeerList extends React.Component {
       min: findMin(filtredByStyle, "IBU").IBU,
       max: findMax(filtredByStyle, "IBU").IBU,
     }
-    const abvFilterEdges = {
-      min: findMin(filtredByStyle, "ABV").ABV,
-      max: findMax(filtredByStyle, "ABV").ABV,
-    }
 
     //Фильтрация по горечи
     const ibuFiltred = filtredByStyle.filter(
       beer => beer.IBU >= ibuFilter.min && beer.IBU <= ibuFilter.max
     )
+
+    const abvFilterEdges = {
+      min: Math.floor(findMin(ibuFiltred, "ABV").ABV),
+      max: Math.ceil(findMax(ibuFiltred, "ABV").ABV),
+    }
 
     //Фильтрация по алкоголю
     const beersToShow = ibuFiltred.filter(
