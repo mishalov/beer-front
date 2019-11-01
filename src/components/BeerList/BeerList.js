@@ -77,8 +77,8 @@ class BeerList extends React.Component {
     )
 
     const abvFilterEdges = {
-      min: Math.floor(findMin(ibuFiltred, "ABV").ABV),
-      max: Math.ceil(findMax(ibuFiltred, "ABV").ABV),
+      min: Math.floor(findMin(ibuFiltred, "ABV").ABV) || 0,
+      max: Math.ceil(findMax(ibuFiltred, "ABV").ABV) || 0,
     }
 
     //Фильтрация по алкоголю
@@ -115,14 +115,11 @@ class BeerList extends React.Component {
                 ))
               ) : (
                 <div className="column col-9 col-md-6 col-sm-12 beer-list__item">
-                  <div class="empty">
-                    <div class="empty-icon">
-                      <i class="icon icon-people"></i>
-                    </div>
-                    <p class="empty-title h5">
+                  <div className="empty">
+                    <p className="empty-title h5">
                       Простите, но пива на ваш вкус мы не варим
                     </p>
-                    <p class="empty-subtitle">
+                    <p className="empty-subtitle">
                       Но Вы можете связаться с нами и, может, мы сделаем его
                       специально для Вас
                     </p>
