@@ -11,7 +11,7 @@ const IndexPage = props => {
   const beers = normalizeBeers(data.allStrapiBeers)
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Главная" />
       <Banner></Banner>
       <BeerList beers={beers}></BeerList>
     </Layout>
